@@ -1,10 +1,13 @@
+import { Flex } from '@chakra-ui/react'
 import React from 'react'
 
 function ItemListContainer({greeting}) {
   return (
-    <div>
-        <p>{greeting}</p>
-    </div>  //este componente se debe importar a la App de src para poder llamarlo.
+
+      <Flex>
+        <h2>{greeting}</h2>
+      </Flex>
+
   )
 }
 

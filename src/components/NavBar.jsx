@@ -1,32 +1,23 @@
-
-import { Flex, Heading, HStack, Link } from '@chakra-ui/react'
-import { Image } from '@chakra-ui/react'
+import { Flex,HStack, Link } from '@chakra-ui/react'
 import React from 'react'
+import CartWidget from './CartWidget'
+import { Image } from '@chakra-ui/react'
+import Logo from '../assets/logo.jpeg'
 
 function NavBar() {
   return (
     <Flex px='200px' py={'30px'} width='full' justifyContent='space-between' alignItems={'flex-end'}>
         <Flex alignItems={'flex-end'}>
-            <Heading mr={'60px'} fontSize={20} letterSpacing='1.5px' color={'yellow.400'}>
-               <Image
-                borderRadius={'full'}
-                boxSize='100px'
-                src='https://bit.ly/dan-abramov'
-                alt='Dan Abramov'
-                />
-            </Heading>
             <HStack spacing={'40px'}>
+                <Link><Image boxSize={'150px'} bo src={Logo} alt='Logo inmobliiaria'/></Link>
                 <Link>Inicio</Link>
                 <Link>Tasaciones</Link>
                 <Link>Nosotros</Link>
                 <Link>Contacto</Link>
+                <Link><CartWidget/></Link>
             </HStack>
         </Flex>
-        <Link>
-            Ingresar
-        </Link>
     </Flex>
-  )
-}
+    )}
 
 export default NavBar
