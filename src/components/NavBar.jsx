@@ -9,7 +9,7 @@ function NavBar() {
     <Flex px='200px' py={'30px'} width='full' justifyContent='space-between' alignItems={'flex-end'}>
         <Flex alignItems={'flex-end'}>
             <HStack spacing={'40px'}>
-                <Link><Image boxSize={'150px'} bo src={Logo} alt='Logo inmobliiaria'/></Link>
+                <Link><Image boxSize={'150px'} src={Logo} alt='Logo inmobliiaria'/></Link>
                 <Link>Inicio</Link>
                 <Link>Tasaciones</Link>
                 <Link>Nosotros</Link>
