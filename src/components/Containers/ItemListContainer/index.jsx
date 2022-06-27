@@ -1,14 +1,23 @@
 import { Flex } from '@chakra-ui/react'
 import React from 'react'
+import ItemCount from '../../ItemCount';
 
-function ItemListContainer({greeting}) {
+const ItemListemContainer = ({greeting}) => {
+
+  const handleAdd = () =>{
+    console.log('se agrego al carrito');
+  }
+
+  
+
   return (
-
+    <Flex justify={'center'}>
+      {greeting}
       <Flex>
-        <h2>{greeting}</h2>
+        <ItemCount handleAdd={handleAdd} initialStock={10}/>
       </Flex>
-
+    </Flex>
   )
 }
 
-export default ItemListContainer
+export default ItemListemContainer
