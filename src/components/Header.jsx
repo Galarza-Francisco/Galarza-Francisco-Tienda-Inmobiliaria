@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './Header.css'
 import { Box, Link, Text, Stack, Flex, Icon, Image, Button } from "@chakra-ui/react";
 import { MdClose, MdMenu } from "react-icons/md";
-import logo from '../assets/logo.jpeg'
+import logo from '../assets/logoColor.png'
 import { FiLogIn } from "react-icons/fi";
 
 
@@ -11,7 +11,7 @@ import { FiLogIn } from "react-icons/fi";
 const Logo = () => {
   return (
     <Box>
-      <Image justifyItems={'center'} boxSize={'200px'} src={logo} color='inherit' alt='Logo inmobliiaria'/>
+      <Image justifyItems={'center'} boxSize={'100px'} src={logo} color='inherit' alt='Logo inmobliiaria'/>
     </Box>
   );
 };
@@ -62,7 +62,7 @@ const NavBarContainer = ({ children }) => {
     <Flex
       as="nav"
       align="center"
-      justify="space-between"
+      justifyContent={'space-between'}
       wrap="wrap"
       width="100%"
       padding={8}
@@ -80,7 +80,7 @@ function Header() {
 
   return (
     <NavBarContainer>
-      <Logo />
+      <Logo/>
       <MenuToggle toggle={toggleMenu} isOpen={isOpen} />
       <MenuLinks isOpen={isOpen} />
     </NavBarContainer>

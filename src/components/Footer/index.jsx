@@ -6,15 +6,17 @@ import {
     Stack,
     Text,
     Image,
-    Box
+    Box,
+    Icon
   } from '@chakra-ui/react'
   import * as React from 'react'
-  import logo from '../../assets/logo.jpeg'
+  import logo from '../../assets/logoColor.png'
   import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
+  import {GrMap,GrPhone} from 'react-icons/gr'
 
   
   export const Footer = () => (
-    <Container as="footer" role="contentinfo">
+    <Container as="footer" role="contentinfo" >
       <Stack
         spacing="8"
         direction={{
@@ -36,7 +38,7 @@ import {
         >
             <Box>
 
-          <Image src={logo} boxSize='150px' alt='logo'/>
+          <Image display={{ base: "none", md: "block" }}  src={logo} boxSize='80px' alt='logo'/>
             </Box>
         </Stack>
         <Stack
@@ -51,17 +53,17 @@ import {
           }}
         >
           <Stack direction="row" spacing="8">
-            <Stack spacing="4" minW="36" flex="1">
+            <Stack spacing="4" minW="36" flex="1" >
               <Text fontSize="sm" fontWeight="semibold" color="subtle">
-                Dirección
+                <Icon as={GrMap}></Icon> Dirección
               </Text>
               <Stack spacing="3" shouldWrapChildren>
-                <Text variant="link">Magnasco N° 000</Text>
+                <Text variant="link">Magnasco N° 157</Text>
               </Stack>
             </Stack>
             <Stack spacing="4" minW="36" flex="1">
               <Text fontSize="sm" fontWeight="semibold" color="subtle">
-                Telefonos
+                <Icon as={GrPhone}></Icon> Teléfonos
               </Text>
               <Stack spacing="3" shouldWrapChildren>
                 <Text variant="link">+54 3446-587272</Text>
@@ -88,7 +90,7 @@ import {
         <ButtonGroup variant="ghost">
           <IconButton
             as="a"
-            href="#"
+            href="https://www.instagram.com/dltpropiedades/"
             aria-label="Instagram"
             icon={<FaInstagram fontSize="2rem" />}
           />
