@@ -1,21 +1,40 @@
-import { Flex } from '@chakra-ui/react'
-import React from 'react'
-import ItemCount from '../../ItemCount';
+import {HStack } from '@chakra-ui/react'
+import React,{useState, useEffect} from 'react'
+import ItemList from '../../ItemList'
+// import ItemCount from '../../ItemCount';
 
-const ItemListemContainer = ({greeting}) => {
+const ItemListContainer = ({greeting}) => {
 
-  const handleAdd = (count) =>{
-    console.log(`se agregaron al carrito ${count} productos`);
-  }
+  const [productos, setProductos] = useState(null)
+
+  useEffect(()=>{
+
+    const getProductos = async() => {
+      try {
+        const response = await fetch('/mocks/data.json');
+        const data = await response.json();
+        console.log(data);
+        setProductos(data);
+      } catch (error) {
+        console.log('hubo un error:');
+        console.log(error);
+      }
+    }
+    getProductos();
+  }, [])
+
+  console.log(productos);
 
   return (
-    <Flex justify={'center'}>
+    <HStack justify={'center'}>
       {greeting}
-      <Flex>
-        <ItemCount handleAdd={handleAdd} initialStock={10}/>
-      </Flex>
-    </Flex>
+      {productos ?
+      <ItemList products={productos}/>
+      :
+      null
+    }
+    </HStack>
   )
 }
 
-export default ItemListemContainer
+export default ItemListContainer
