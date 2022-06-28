@@ -26,7 +26,7 @@ const ItemCount = ({handleAdd, initialStock}) => {
         </HStack>
         <Text>{count}</Text>
         <Flex>
-        <Button onClick={handleAdd}>Agregar al carrito</Button>
+        <Button onClick={()=> handleAdd(count)}>Agregar al carrito</Button>
         </Flex>
     </Container>
   )

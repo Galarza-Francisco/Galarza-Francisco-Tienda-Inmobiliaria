@@ -9,9 +9,6 @@ import Header from './components/Header';
 function App() {
 
   return (
-
-
-
     <ChakraProvider>
       <div className='container-layout'>
         <div className='container-header'>
@@ -25,7 +22,6 @@ function App() {
         </div>
       </div>
     </ChakraProvider>
-
   );
 }
 

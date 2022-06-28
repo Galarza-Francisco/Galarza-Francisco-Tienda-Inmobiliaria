@@ -4,11 +4,9 @@ import ItemCount from '../../ItemCount';
 
 const ItemListemContainer = ({greeting}) => {
 
-  const handleAdd = () =>{
-    console.log('se agrego al carrito');
+  const handleAdd = (count) =>{
+    console.log(`se agregaron al carrito ${count} productos`);
   }
-
-  
 
   return (
     <Flex justify={'center'}>
