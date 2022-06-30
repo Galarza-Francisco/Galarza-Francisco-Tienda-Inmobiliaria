@@ -52,7 +52,7 @@ import {
             md: '8',
           }}
         >
-          <Stack direction="row" spacing="8">
+          <Stack direction="row" spacing="10">
             <Stack spacing="4" minW="36" flex="1" >
               <Text fontSize="sm" fontWeight="semibold" color="subtle">
                 <Icon as={GrMap}></Icon> Dirección
@@ -87,7 +87,7 @@ import {
         <Text fontSize="sm" color="subtle">
           &copy; {new Date().getFullYear()} DLT PROPIEDADES.Todos los derechos reservados.
         </Text>
-        <ButtonGroup variant="ghost">
+        <ButtonGroup spacing={10} variant="ghost">
           <IconButton
             as="a"
             href="https://www.instagram.com/dltpropiedades/"

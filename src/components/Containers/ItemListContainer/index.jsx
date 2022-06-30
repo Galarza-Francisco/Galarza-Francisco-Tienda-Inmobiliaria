@@ -1,37 +1,52 @@
-import {HStack } from '@chakra-ui/react'
+import {HStack, Spinner } from '@chakra-ui/react'
 import React,{useState, useEffect} from 'react'
 import ItemList from '../../ItemList'
-// import ItemCount from '../../ItemCount';
+import {useParams} from 'react-router-dom';
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = ({ greeting }) => {
 
-  const [productos, setProductos] = useState(null)
+  const [productos, setProductos] = useState([])
+  const [productosFiltrados, setProductosFiltrados] = useState([])
 
-  useEffect(()=>{
+  const params = useParams()
 
-    const getProductos = async() => {
+  useEffect(() => {
+
+    const getProductos = async () => {
       try {
-        const response = await fetch('/mocks/data.json');
-        const data = await response.json();
-        console.log(data);
+        const response = await fetch('https://fakestoreapi.com/products');
+        const data = await response.json()
         setProductos(data);
+        setProductosFiltrados(data);
       } catch (error) {
-        console.log('hubo un error:');
+        console.log("Hubo un error:");
         console.log(error);
       }
     }
-    getProductos();
+    getProductos()
   }, [])
 
-  console.log(productos);
+  useEffect(() => {
+    if (params?.categoryId) {
+      const productosFiltrados = productos.filter(producto => producto.category === params.categoryId)
+      setProductosFiltrados(productosFiltrados)
+    } else {
+      setProductosFiltrados(productos)
+    }
+  }, [params, productos])
 
   return (
     <HStack justify={'center'}>
-      {greeting}
-      {productos ?
-      <ItemList products={productos}/>
+      {productos.length !== 0 ?
+      <ItemList products={productosFiltrados}/>
       :
-      null
+      <Spinner
+            thickness='4px'
+            speed='0.65s'
+            emptyColor='gray.200'
+            color='#E9BA2E'
+            size='lg'
+        />
     }
     </HStack>
   )

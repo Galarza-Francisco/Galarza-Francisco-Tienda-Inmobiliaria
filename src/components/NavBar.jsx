@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import './Header.css'
+import './NavBar.css'
 import { Box, Link, Text, Stack, Flex, Icon, Image, Button } from "@chakra-ui/react";
 import { MdClose, MdMenu } from "react-icons/md";
 import logo from '../assets/logoColor.png'
 import { FiLogIn } from "react-icons/fi";
+
 
 
 
@@ -47,7 +48,7 @@ const MenuLinks = ({ isOpen }) => {
         direction={["column", "row"]}
         paddingTop={[4, 4, 0]}
       >
-        <MenuItem to="#">Inicio</MenuItem>
+        <MenuItem to="/">Inicio</MenuItem>
         <MenuItem to="#">Tasaciones</MenuItem>
         <MenuItem to="#">Quienes Somos</MenuItem>
         <MenuItem to="#">Contacto</MenuItem>
@@ -74,7 +75,7 @@ const NavBarContainer = ({ children }) => {
   );
 };
 
-function Header() {
+function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -87,4 +88,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default NavBar;

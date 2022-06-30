@@ -1,14 +1,14 @@
 import React from 'react'
-import {Grid} from '@chakra-ui/react'
+import { Wrap} from '@chakra-ui/react'
 import Item from '../Item'
 
 const ItemList = ({products}) => {
   return (
-    <Grid templateColumns={'repeat(4, 1fr)'} gap={8} margin='10'>
+    <Wrap justify={'center'} spacing='30px'  margin={5} padding={4}>
         {products.map(producto => {
             return <Item product={producto} key={producto.id}/>
         })}
-    </Grid>
+    </Wrap>
   )
 }
 
