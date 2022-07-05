@@ -49,9 +49,9 @@ const MenuLinks = ({ isOpen }) => {
         paddingTop={[4, 4, 0]}
       >
         <MenuItem to="/">Inicio</MenuItem>
-        <MenuItem to="#">Tasaciones</MenuItem>
-        <MenuItem to="#">Quienes Somos</MenuItem>
-        <MenuItem to="#">Contacto</MenuItem>
+        <MenuItem to="/category/electronics">electronics</MenuItem>
+        <MenuItem to="/category/jewelery">jewelery</MenuItem>
+        <MenuItem to="/category/men's clothing">men's clothing</MenuItem>
         <Button rightIcon={<FiLogIn/>} variant='outline' border='2px' colorScheme='gray' borderColor='#E9BA2E' size={'sm'} to="#">Ingresar</Button>
       </Stack>
     </Box>

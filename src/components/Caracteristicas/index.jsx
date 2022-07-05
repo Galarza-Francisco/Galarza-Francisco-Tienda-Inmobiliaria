@@ -1,70 +1,104 @@
-import React from 'react';
-import './styles.css'
-import { Flex, Spacer, Text, useMediaQuery, Icon } from '@chakra-ui/react';
-import { MdOutlineRealEstateAgent } from "react-icons/md";
-import {BsBuilding} from 'react-icons/bs'
-import { BsCalculator} from "react-icons/bs";
- 
+// import { Box, Divider, Flex, Icon,Text, Center } from '@chakra-ui/react'
+// import {BsCalculator, BsBuilding} from 'react-icons/bs'
+// import{MdOutlineRealEstateAgent} from 'react-icons/md'
+// import './styles.css'
+// import React from 'react';
+
+// const Caracteristicas = () => {
+//   return (
+//     <Flex 
+//     maxW='1000px'
+//     w={['90vw','90vw','90vw','70vw']}
+//     justify='center'
+//     direction={['column', 'column', 'row', 'row']}
+//     boxShadow='md'
+//     rounded='lg'
+//     p='4'>
+
+//         <Flex align='center' mx='2' >
+//           <Icon className='iconFeature' fontSize='4rem' color="#E9BA2E" as={MdOutlineRealEstateAgent}/>
+//           <Box mx='4'>
+//             <Text as='h2' fontWeight='medium' fontSize='xl' mb='2'>
+//               servicios Inmobiliarios
+//             </Text>
+//             <Text as='h3' fontWeight='light' fontSize='md' >
+//               Operaciones de compra venta, alquiler de propiedades y asesoría profesional personalizada en toda gestión de bienes raíces.
+//             </Text>
+//           </Box>
+//         </Flex>
+//         <Center height='200px' >
+//           <Divider orientation='vertical' my='2' padding='3' />
+//         </Center>
+//         <Flex align='center' mx='2'>
+//           <Icon className='iconFeature' fontSize='4rem' color={"#E9BA2E"} as={BsCalculator}/>
+//           <Box mx='5'>
+//             <Text as='h2' fontWeight='medium'textAlign={'center'} fontSize='xl' mb='2'>Tasaciones</Text>
+//             <Text as='h3' fontWeight='light' fontSize='md' >Darle un correcto valor a un inmueble es determinante para el éxito en la venta, coordinamos y realizamos tasaciones en el día.</Text>
+//           </Box>
+//         </Flex>
+//         <Center height='200px' >
+//           <Divider orientation='vertical' my='2'  padding='3'  />
+//         </Center>
+//         <Flex align='center' mx='2'>
+//           <Icon className='iconFeature' fontSize='4rem' color="#E9BA2E" as={BsBuilding}/>
+//           <Box mx='4'>
+//             <Text as='h2' fontWeight='medium' fontSize='xl' mb='2'>Inversiones</Text>
+//             <Text as='h3' fontWeight='light' fontSize='md' >Gestión y asesoramiento profesional íntegro y personalizado para inversiones en activos inmobiliarios rentables en el exterior.</Text>
+//           </Box>
+//         </Flex>
+//     </Flex>
+//   )
+// }
+
+// export default Caracteristicas
+
+
+
+import { Container, Flex, Heading, HStack, Box, Text, Icon, WrapItem } from '@chakra-ui/react'
+import {MdOutlineRealEstateAgent} from 'react-icons/md'
+import React from 'react'
+
 const Caracteristicas = () => {
-  const [isLargerThan48] = useMediaQuery('(min-width: 48em)');
- 
-  const array = [
-    {
-      id: 1,
-      title: 'Servicios Inmobiliarios',
-      text: ' Operaciones de compra venta, alquiler de propiedades y asesoría profesional personalizada en toda gestión de bienes raíces.',
-      icon: MdOutlineRealEstateAgent,
-    },
-    {
-      id: 2,
-      title: 'Tasaciones',
-      text: 'Darle un correcto valor a un inmueble es determinante para el éxito en la venta, coordinamos y realizamos tasaciones en el día.',
-      icon: BsCalculator,
-    },
-    {
-      id: 3,
-      title: 'Inversiones',
-      text: 'Gestión y asesoramiento profesional íntegro y personalizado para inversiones en activos inmobiliarios rentables en el exterior.',
-      icon: BsBuilding,
-    },
-  ];
- 
   return (
-    <Flex
-      minH="70vh"
-      alignItems="center"
-      justifyContent="space-between"
-      w="full"
-      py="16"
-      px={isLargerThan48 ? '16' : '6'}
-      flexWrap="wrap"
-      flexDirection={isLargerThan48 ? 'row' : 'column'}
-    >
-      {array.map((arr) => (
-        <>
-          <Flex
-            height="300px"
-            width={isLargerThan48 ? '32%' : 'full'}
-            shadow='lg'
-            p="6"
-            alignItems="center"
-            justifyContent="center"
-            borderRadius="md"
-            flexDirection="column"
-            textAlign="center"
-            mb={isLargerThan48 ? '0' : '4'}
-            border="1px solid blackAlpha.200"
-          >
-            <Icon className='iconFeature' as={arr.icon} boxSize={14} color="#E9BA2E" mb="5" />
-            <Text fontSize={'1.5rem'} p='2'>{arr.title}</Text>
-            <Text>{arr.text}</Text>
-          </Flex>
- 
-          <Spacer />
-        </>
-      ))}
-    </Flex>
-  );
-};
- 
-export default Caracteristicas; 
+    <Container textAlign={'center'} maxW="container.x-lg" p='10'>
+        <Heading>Por que elegirnios?</Heading>
+        <Text p={5}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, perspiciatis nemo! Quas velit quasi qui.</Text>
+      <Flex h={'80vh'} py={20}>
+        <HStack 
+        bg='gray.50'
+        w='full'
+        h='full'
+        p={10}
+        spacing={10}
+        align='center'>
+          <WrapItem>
+            <Box overflow='hidden' p={5} shadow='md' borderWidth='2px'>
+              <Icon className='iconFeature' fontSize='5rem' color="#E9BA2E" as={MdOutlineRealEstateAgent}/>
+              <Box>
+                <Heading p={8} fontSize='xl'>Servicios Inmobiliarios</Heading>
+                <Text>Operaciones de compra venta, alquiler de propiedades y asesoría profesional personalizada en toda gestión de bienes raíces.</Text>
+              </Box>
+            </Box>
+            <Box w='100%' overflow='hidden' p={5} shadow='md' borderWidth='2px'>
+              <Icon className='iconFeature' fontSize='5rem' color="#E9BA2E" as={MdOutlineRealEstateAgent}/>
+              <Box>
+                <Heading p={8} fontSize='xl'>Servicios Inmobiliarios</Heading>
+                <Text>Operaciones de compra venta, alquiler de propiedades y asesoría profesional personalizada en toda gestión de bienes raíces.</Text>
+              </Box>
+            </Box>
+            <Box w='100%' overflow='hidden' p={5} shadow='md' borderWidth='2px'>
+              <Icon className='iconFeature' fontSize='5rem' color="#E9BA2E" as={MdOutlineRealEstateAgent}/>
+              <Box>
+                <Heading p={8} fontSize='xl'>Servicios Inmobiliarios</Heading>
+                <Text>Operaciones de compra venta, alquiler de propiedades y asesoría profesional personalizada en toda gestión de bienes raíces.</Text>
+              </Box>
+            </Box>
+          </WrapItem>
+        </HStack>
+      </Flex>
+    </Container>
+  )
+}
+
+export default Caracteristicas
+
