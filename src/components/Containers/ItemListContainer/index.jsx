@@ -1,14 +1,17 @@
-import {HStack, Spinner } from '@chakra-ui/react'
+import {HStack, Skeleton, Spinner } from '@chakra-ui/react'
 import React,{useState, useEffect} from 'react'
 import ItemList from '../../ItemList'
 import {useParams} from 'react-router-dom';
 
 const ItemListContainer = ({ greeting }) => {
 
+  const [loading, setLoading] = useState([false]);
+
   const [productos, setProductos] = useState([])
   const [productosFiltrados, setProductosFiltrados] = useState([])
 
   const params = useParams()
+  
 
   useEffect(() => {
 

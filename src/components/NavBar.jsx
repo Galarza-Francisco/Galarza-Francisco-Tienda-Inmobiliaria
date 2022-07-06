@@ -4,6 +4,7 @@ import { Box, Link, Text, Stack, Flex, Icon, Image, Button } from "@chakra-ui/re
 import { MdClose, MdMenu } from "react-icons/md";
 import logo from '../assets/logoColor.png'
 import { FiLogIn } from "react-icons/fi";
+import {AiOutlineShoppingCart} from 'react-icons/ai'
 
 
 
@@ -52,7 +53,7 @@ const MenuLinks = ({ isOpen }) => {
         <MenuItem to="/category/electronics">electronics</MenuItem>
         <MenuItem to="/category/jewelery">jewelery</MenuItem>
         <MenuItem to="/category/men's clothing">men's clothing</MenuItem>
-        <Button rightIcon={<FiLogIn/>} variant='outline' border='2px' colorScheme='gray' borderColor='#E9BA2E' size={'sm'} to="#">Ingresar</Button>
+        <Button variant='outline' fontSize='2xl' border='none' colorScheme='gray' size={'sm'} to="#"><AiOutlineShoppingCart/></Button>
       </Stack>
     </Box>
   );

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import { Badge, Box,Image, WrapItem } from '@chakra-ui/react'
+import { Badge, Box,Icon,Image, WrapItem } from '@chakra-ui/react'
+import {AiOutlineStar} from 'react-icons/ai'
 
 const Item = ({product}) => {
 
@@ -41,6 +42,9 @@ const Item = ({product}) => {
           <Box as='span' display='flex' mt='4' ml='2' fontSize='sm' color='gray.600'>
             {product.description}
           </Box>
+          <Box pt={3} color='gray.500' fontWeight='semibold' letterSpacing='wide' fontSize='md' textTransform='uppercase' ml='2' >
+              <Icon as={AiOutlineStar}/> {product.rating.rate}
+            </Box>
         </Box>
       </Box>
     </WrapItem>
