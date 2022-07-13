@@ -4,24 +4,32 @@ import {Box, Image, Badge, Flex, Button} from '@chakra-ui/react';
 import ButtonCount from '../ButtonCount';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { Shop } from '../../Context/ShopContext';
 
 
 
 const ItemDetail = ({ product }) => {
 
   const navigate = useNavigate ();
+  
 
   product.stock = 10;
   const [cantAgregada, setCantAgregada] = useState(0);
+
+  const {addItem}= useContext(Shop)
 
   const handleConfirm = (cant) =>{
     setCantAgregada(cant)
   }
 
+  
+
   const handleTerminate = () =>{
+    addItem(product, cantAgregada, )
     navigate('/cart')
   }
-
+  
     return (
       <Flex justify={'center'}>
         <Box shadow={'base'} maxW='sm' flex={'1'} borderWidth='1px' borderRadius='lg' p='4' overflow='hidden'>

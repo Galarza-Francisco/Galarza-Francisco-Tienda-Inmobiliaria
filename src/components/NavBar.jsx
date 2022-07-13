@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import './NavBar.css'
-import { Box, Link, Text, Stack, Flex, Icon, Image, Button } from "@chakra-ui/react";
+import { Box, Link, Text, Stack, Flex, Icon, Image } from "@chakra-ui/react";
 import { MdClose, MdMenu } from "react-icons/md";
 import logo from '../assets/logoColor.png'
-import { FiLogIn } from "react-icons/fi";
-import {AiOutlineShoppingCart} from 'react-icons/ai'
+// import { useContext } from "react";
+// import { Shop } from "../Context/ShopContext";
+import CartWidget from "./CartWidget";
 
 
 
@@ -37,6 +38,8 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
 };
 
 const MenuLinks = ({ isOpen }) => {
+
+  
   return (
     <Box
       display={{ base: isOpen ? "block" : "none", md: "block" }}
@@ -53,7 +56,7 @@ const MenuLinks = ({ isOpen }) => {
         <MenuItem to="/category/electronics">electronics</MenuItem>
         <MenuItem to="/category/jewelery">jewelery</MenuItem>
         <MenuItem to="/category/men's clothing">men's clothing</MenuItem>
-        <Button variant='outline' fontSize='2xl' border='none' colorScheme='gray' size={'sm'} to="#"><AiOutlineShoppingCart/></Button>
+
       </Stack>
     </Box>
   );
@@ -80,11 +83,14 @@ function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 
+
+
   return (
     <NavBarContainer>
       <Logo/>
       <MenuToggle toggle={toggleMenu} isOpen={isOpen} />
       <MenuLinks isOpen={isOpen} />
+      <CartWidget/>
     </NavBarContainer>
   );
 }
