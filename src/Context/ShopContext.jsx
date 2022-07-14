@@ -26,12 +26,9 @@ const ShopProvider = ({children}) => {
     //remover elementos
     
     const removeItem = (id) =>{
-      const productosFiltrados = cart.filter(producto => producto.id !== id)
-      setCart(productosFiltrados);
+      setCart(cart.filter((producto)=> producto.id !== id));
     }
 
-
-    //vaciar carrito
 
 
 
