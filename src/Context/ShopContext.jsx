@@ -7,16 +7,20 @@ export const Shop = createContext();
 
 const ShopProvider = ({children}) => {
 
-    const [estadoA, setEstadoA] = useState('valor por defecto')
 
     const [cart, setCart] = useState([]);
 
+    // agregar item al carrito, dependiendo de la cantidad.
+
     const addItem = (producto, cantidad) =>{
-      const productoRepetido = isInCart(producto);
+
+      const productoRepetido = cart.find(elemento => elemento.id === producto.id)
 
       if (productoRepetido) {
+
         productoRepetido.quantity += cantidad
         setCart([...cart])
+        
       }else {
 
         setCart([...cart, {...producto, quantity:cantidad}])
@@ -26,18 +30,18 @@ const ShopProvider = ({children}) => {
     //remover elementos
     
     const removeItem = (id) =>{
-      setCart(cart.filter((producto)=> producto.id !== id));
+      const productosFiltrados = cart.filter(producto => producto.id !== id)
+      setCart(productosFiltrados);
+      
     }
 
-
-
-
-    const isInCart = (producto) =>{
-      return cart.find(elemento => elemento.id === producto.id)
+    const limpiarCarrito = () =>{
+      setCart([]);
     }
+
 
     return (
-    <Shop.Provider value={{estadoA, setEstadoA, addItem, cart,removeItem}}>
+    <Shop.Provider value={{addItem,limpiarCarrito, cart,removeItem}}>
         {children}
     </Shop.Provider>
   )

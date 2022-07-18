@@ -1,18 +1,20 @@
-import { Badge, Box, Link} from '@chakra-ui/react'
+import { Badge, Box, Button} from '@chakra-ui/react'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import React from 'react'
 import { useContext } from 'react'
 import { Shop } from '../../Context/ShopContext'
+import { useNavigate } from 'react-router-dom'
 
 const CartWidget = () => {
     const {cart} = useContext(Shop);
+    const navigate = useNavigate();
 
   return (
     <Box>
-        <Link mb={7}>
-            {cart.length && <Badge ml={6} bg='transparent' color={'GrayText'} >{cart.length}</Badge>}
+        <Button onClick={()=> navigate('/cart')} variant='ghost' colorScheme='yellow'  mb={7}>
+            {cart.length && <Badge bg='transparent' color={'GrayText'} >{cart.length}</Badge>}
             <AiOutlineShoppingCart size={25}/>
-        </Link>
+        </Button>
     </Box>
 
   )

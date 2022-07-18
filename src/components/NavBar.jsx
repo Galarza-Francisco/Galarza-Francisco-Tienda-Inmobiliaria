@@ -56,7 +56,6 @@ const MenuLinks = ({ isOpen }) => {
         <MenuItem to="/category/electronics">electronics</MenuItem>
         <MenuItem to="/category/jewelery">jewelery</MenuItem>
         <MenuItem to="/category/men's clothing">men's clothing</MenuItem>
-
       </Stack>
     </Box>
   );

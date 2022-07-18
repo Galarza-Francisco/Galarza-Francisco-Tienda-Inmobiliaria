@@ -32,7 +32,7 @@ const ItemDetail = ({ product }) => {
   
     return (
       <Flex justify={'center'}>
-        <Box shadow={'base'} maxW='sm' flex={'1'} borderWidth='1px' borderRadius='lg' p='4' overflow='hidden'>
+        <Box shadow={'base'} maxW='md' flex={'1'} borderWidth='1px' borderRadius='lg' p='4' overflow='hidden'>
           <Image src={product.image} alt={`imagen ${product.title}`}/>
           <Box p='6'>
             <Box display='flex' alignItems='baseline'>
@@ -66,7 +66,8 @@ const ItemDetail = ({ product }) => {
         <ButtonCount onConfirm={handleConfirm} maxQuantity={product.stock}/>
         :
         <Box textAlign={'center'}>
-          <Button  onClick={handleTerminate}>Finalizar Compra</Button>
+          <Button variant={'ghost'} onClick={handleTerminate}>¿Confirmar pedido?</Button>
+          <Button variant={'ghost'}  onClick={()=> navigate('/')}>Volver a compras</Button>
         </Box>
         }
         </Box>
