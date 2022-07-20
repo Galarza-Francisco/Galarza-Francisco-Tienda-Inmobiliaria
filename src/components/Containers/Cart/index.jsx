@@ -41,17 +41,17 @@ const Cart = () => {
        <Box p={2}>
        {cart.map(producto => {
                return (
-               <Flex border='1px' borderColor={'blackAlpha.300'} p={2} key={producto.id} m={2}>
+               <Flex justify={'space-between'} border='1px' borderColor={'blackAlpha.300'} p={2} key={producto.id} m={2}>
                    <Box p={3}>
                      <Image src={producto.image} w='100px' h='100px'/>
                    </Box>
                    <Box m={2} maxW='70%' >
                      <Text mb={2}>{producto.title}</Text>
-                     <Text fontSize={'xs'}>{producto.description}</Text>
+                     <Text fontSize={'xs'}>{producto.descripcion}</Text>
                    </Box>
                    <Flex align={'center'} alignItems='center'ml={'2rem'}>
                      <Box>
-                       <Badge variant='subtle' fontSize={'sm'} >$ {getPrecio(producto.quantity, producto.price)}</Badge>
+                       <Badge variant='subtle' fontSize={'sm'} >$ {getPrecio(producto.quantity, producto.precio)}</Badge>
                      </Box>
                      <Box ml={4}>
                        <Button fontSize='1.5rem' colorScheme={'red'} variant='ghost' onClick={() => removeItem (producto.id)}><FiTrash/></Button>

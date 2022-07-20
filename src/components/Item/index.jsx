@@ -1,7 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import { Badge, Box,Icon,Image, WrapItem } from '@chakra-ui/react'
-import {AiOutlineStar} from 'react-icons/ai'
+import { Badge, Box,Image, WrapItem } from '@chakra-ui/react'
 
 const Item = ({product}) => {
 
@@ -15,7 +14,7 @@ const Item = ({product}) => {
   return (
     <WrapItem>
       <Box shadow={'base'} maxW='sm' flex={'1'}  borderWidth='1px' borderRadius='lg' p='4' overflow='hidden' onClick={handleDetail}>
-        <Image boxSize={'fit-content'} src={product.image} alt={`imagen ${product.title}`}/>
+        <Image boxSize={'fit-content'} src={product.image} alt={`imagen ${product.tipo}`}/>
         <Box p='6'>
           <Box display='flex' alignItems='baseline'>
             <Badge borderRadius='full' px='2' colorScheme='teal'>Nuevo</Badge>
@@ -25,7 +24,7 @@ const Item = ({product}) => {
               fontSize='xs'
               textTransform='uppercase'
               ml='2'>
-                {product.category}
+                {product.operacion}
             </Box>
           </Box>
           <Box 
@@ -34,17 +33,15 @@ const Item = ({product}) => {
           as='h2'
           lineHeight='tight'
           noOfLines={4}>
-            {product.title}
+            {product.direccion}
           </Box>
           <Box textAlign={'center'} p='2' textTransform='uppercase' color='greay.800' fontSize='x-large'>
-            Usd $ {product.price}
+            Usd $ {product.precio}
           </Box>
           <Box as='span' display='flex' mt='4' ml='2' fontSize='sm' color='gray.600'>
-            {product.description}
+            {product.descripcion}
           </Box>
-          <Box pt={3} color='gray.500' fontWeight='semibold' letterSpacing='wide' fontSize='md' textTransform='uppercase' ml='2' >
-              <Icon as={AiOutlineStar}/> {product.rating.rate}
-            </Box>
+
         </Box>
       </Box>
     </WrapItem>
